@@ -1,34 +1,49 @@
-# [Discord RSS Bot](https://github.com/freiheit/discord_rss_bot)
+[![Discord server](https://discord.com/api/guilds/910747606722965555/embed.png)](https://discord.com/servers/feedbot-910747606722965555)
+[![Latest Release](https://gitlab.com/ffreiheit/discord_feedbot/-/badges/release.svg)](https://gitlab.com/ffreiheit/discord_feedbot/-/releases)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6176/badge)](https://bestpractices.coreinfrastructure.org/projects/6176)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Dependency Review](https://github.com/freiheit/discord_feedbot/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/freiheit/discord_feedbot/actions/workflows/dependency-review.yml)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CONTRIBUTING.md)
 
-Bot for taking in an RSS or Atom feed and sharing it into a Discord channel.
+# [Discord RSS Bot](https://gitlab.com/ffreiheit/discord_feedbot)
+
+Primary location is https://gitlab.com/ffreiheit/discord_feedbot --
+github.com/freiheit/discord_feedbot is a mirror and all others are forks.
+
+![Feed Bot](avatars/avatar-angry-small.png)
+
+Bot for taking in an RSS, Atom, or JSON feed and sharing it into a Discord channel.
 
 Designed to be very configurable.
 
-It should be possible to use as a library in another bot.
+It should be possible to use as a library in another bot. (But can simply
+run with same tokens instead, since it's write-only to discord)
 
-Since this bot doesn't *react* to anything in channels or messages, you could always
-have it sign into the same account as another bot, and externally it should appear to
-be a single bot.
+Since this bot doesn't *react* to anything in channels or messages, you can
+have it sign into the same account as another bot, and externally it should
+appear to be a single bot.
 
-## Setup
+## Feedbot Discord
 
-1. Go here: https://discordapp.com/developers/applications/me#top
-2. Register an "application" and create an "app bot user".
-3. Replace "APP_CLIENT_ID" with the App's Client ID in this URL:
-   https://discordapp.com/oauth2/authorize?&client_id=APP_CLIENT_ID&scope=bot&permissions=153600
-4. Give that URL to the Discord server/guild owner and have them authorize
-   the bot.
-5. `git clone` this repo.
-6. Copy feed2discord.ini to feed2discord.local.ini
-7. Put the App Bot User's 'Token' in the .ini file.
-8. Get all the channel IDs (last bit of the channel link)
-9. Figure out your feeds.
-   - You'll need to figure out what fields by examining what's in an item in your feeds.
-10. configure feeds in feed2discord.ini (anything that's not MAIN, CHANNELS or DEFAULT is assumed to be a feed)
-11. Run the bot.
+Head to https://discord.gg/s97tH5Bsw6 and "Follow" the rooms you want.
+
+Originally this was mostly Elite: Dangerous, then expanded to feeds for other games I was playing and now has a mix of hundreds of feeds including news, linux, security, various tech things, etc etc.
+
+## Running it yourself
+
+### Installation / Initial Setup
+
+See [INSTALLING.md](INSTALLING.md)
+
+### Adding feeds
+
+See [FEEDS.md](FEEDS.md)
+
+
+### My configuration
+The configuration of my instance of feedbot (minus auth token) is here: https://github.com/freiheit/feedbot-config
 
 ## Use as Library
-
 I have not tested at all, but I have tried to make it possible to plug this
 in as a library. Probably needs work. You'll need to replace your simple
 "client.run()" with the more complicated stuff inside the if __name__ block
@@ -41,8 +56,32 @@ library, like maybe changing how client= gets set, to something with a
 setup function that takes an optional client argument, maybe? If you figure
 it out, please give me a pull request.
 
-## Requirements
-- Python 3.4.2+
-- [discord.py](https://github.com/Rapptz/discord.py)
-- [feedparser](https://pypi.python.org/pypi/feedparser)
-- [html2text](https://pypi.python.org/pypi/html2text)
+If you don't need _live_ changes, since this bot is read-only, it can easily
+be running alongside another bot using same account to appear as a single
+user.
+
+
+## Frequently Asked Questions (FAQ)
+FAQ items are in
+[INSTALLING.md](INSTALLING.md) and
+[FEEDS.md](FEEDS.md)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Chat with me
+Come to https://discord.gg/s97tH5Bsw6 and talk in the #dev room.
+
+### Bug reports
+Preferred avenue for bug reports is an Issue filed at https://gitlab.com/ffreiheit/discord_feedbot/-/issues
+
+#### Security Bugs
+Check the "confidential" checkbox when submitting an Issue at https://gitlab.com/ffreiheit/discord_feedbot/-/issues
+
+## Financial Support
+I have a very few costs associated with this project. (under $10/month)
+I'm happy to donate my time.
+But if you want to thank me financially:
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V21T7Y9)
+Or: https://discord.com/servers/feedbot-910747606722965555

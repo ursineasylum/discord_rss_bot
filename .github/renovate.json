@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "assignees": [
+    "freiheit@gmail.com"
+  ],
+  "dependencyDashboardAutoclose": true,
+  "timezone": "America/Los_Angeles",
+  "schedule": [
+    "after 5pm and before 10pm every weekday",
+    "every weekend"
+  ],
+  "constraints": {
+    "python": ">= 3.9"
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ]
+}

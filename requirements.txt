@@ -1,0 +1,6 @@
+aiohttp[speedups]
+brotlicffi
+discord.py
+feedparser-rs
+html2text
+python-dateutil
